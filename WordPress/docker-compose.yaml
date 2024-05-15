@@ -21,14 +21,14 @@ services:
         ipv4_address: 10.0.0.2
 
   database:
-    image: mysql:5.7
+    image: mariadb:11.3.2
     container_name: wp_db
     restart: always
     environment:
-      MYSQL_RANDOM_ROOT_PASSWORD: 1
-      MYSQL_USER: ${DBUSER}
-      MYSQL_PASSWORD: ${DBPASS}
-      MYSQL_DATABASE: ${DBNAME}
+      MARIADB_RANDOM_ROOT_PASSWORD: 1
+      MARIADB_USER: ${DBUSER}
+      MARIADB_PASSWORD: ${DBPASS}
+      MARIADB_DATABASE: ${DBNAME}
     volumes:
       - database:/var/lib/mysql
     working_dir: /var/lib/mysql
